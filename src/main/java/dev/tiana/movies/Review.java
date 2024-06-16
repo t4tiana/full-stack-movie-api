@@ -17,5 +17,9 @@ public class Review {
 
     private String body;
 
-
+    // Constructor for when new review is written
+    // Cannot pass id because id is auto-generated
+    public Review(String body) {
+        this.body = body;
+    }
 }
