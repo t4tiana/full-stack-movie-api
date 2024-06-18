@@ -12,7 +12,7 @@
 	<artifactId>movies</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>movies</name>
-	<description>Basic API for movies</description>
+	<description>Basic API for Fast and the Furious Saga</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
