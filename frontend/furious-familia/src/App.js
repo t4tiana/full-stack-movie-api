@@ -8,7 +8,7 @@ import Home from './components/home/Home';
 function App() {
 
   /*Re-render app when state of movies changes */
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
 
   const getMovies = async () =>{
 
@@ -26,14 +26,14 @@ function App() {
   /*Run getMovies function as soon as App loads */
   useEffect(() => {
     getMovies();
-  }, [])
+  }, [movies])
 
   return (
     <div className="App">
 
       <Routes>
         <Route path="/" element={<Layout/>}>
-          <Route path="/" element={<Home/>}></Route>
+          <Route path="/" element={<Home movies = {movies} />}></Route>
         </Route>
       </Routes>
 

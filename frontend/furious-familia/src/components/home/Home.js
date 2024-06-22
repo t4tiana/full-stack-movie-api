@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
+import Hero from '../hero/Hero';
 
 const Home = () => {
     return (
-        <div>
-            Are you ready to live life a quarter mile at a time?
-        </div>
+        <Hero movies = {movies}/>
     )
 }
 
