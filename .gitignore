@@ -34,3 +34,7 @@ build/
 
 ### ENV files - ensures your .env files are not copied to github and remain secret ###
 .env
+
+### node modules ###
+node_modules
+
