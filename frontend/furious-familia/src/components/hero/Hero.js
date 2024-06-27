@@ -9,7 +9,7 @@ const Hero = ({movies}) => {
                 {
                    movies?.map((movie)=> {
                         return (
-                            <Paper>
+                            <Paper elevation={16}>
                             <div className='movie-card-container'>
                                 <div className='movie-card' style={{"--img": `url(${movie.backdrops[0]})`}}>
                                     <div className='movie-detail'>
@@ -27,7 +27,6 @@ const Hero = ({movies}) => {
                     })
                 }
             </Carousel>
-
         </div>
     )
 }
