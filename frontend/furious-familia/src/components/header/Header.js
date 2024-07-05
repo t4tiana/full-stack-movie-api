@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideoSlash } from "@fortawesome/free-solid-svg-icons";
+import { faFilm, faVideoSlash } from "@fortawesome/free-solid-svg-icons";
 // import { Button } from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -19,7 +19,7 @@ const Header = () => {
           href="/"
           style={{ color: "gold" }}
         >
-          <FontAwesomeIcon icon={faVideoSlash}>Gold</FontAwesomeIcon>
+          <FontAwesomeIcon icon={faFilm}>Gold</FontAwesomeIcon>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll"/>
         <Navbar.Collapse id="navbar scroll">

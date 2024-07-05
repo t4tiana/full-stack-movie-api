@@ -10,7 +10,7 @@ function App() {
   /*Re-render app when state of movies changes */
   const [movies, setMovies] = useState([]);
 
-  /* getMovies is a function that sends a get request to db to fetch all movies
+  /* Sends a Get request to db to fetch all movies
   the response data is inserted as a parameter to setMovies, which updates the
   initially empty array to contain all returned movie data */
   const getMovies = async () => {
