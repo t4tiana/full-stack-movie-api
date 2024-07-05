@@ -19,7 +19,7 @@ const Header = () => {
           href="/"
           style={{ color: "gold" }}
         >
-          <FontAwesomeIcon icon={faFilm}>Gold</FontAwesomeIcon>
+          <FontAwesomeIcon icon={faFilm}/>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll"/>
         <Navbar.Collapse id="navbar scroll">
