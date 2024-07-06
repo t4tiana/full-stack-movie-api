@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caveat&family=Faster+One&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 
 *{
   box-sizing: border-box;
-  font-family: 'Faster One', Arial, Helvetica, sans-serif;
+  font-family: "Goldman", Arial, Helvetica, sans-serif;
 }
 
 body {

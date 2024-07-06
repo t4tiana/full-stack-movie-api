@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Header from "./components/header/Header";
+import Trailer from "./components/trailer/Trailer";
 
 function App() {
   /*Re-render app when state of movies changes */
@@ -39,6 +40,10 @@ function App() {
           <Route
             path="/"
             element={<Home movies={movies} />}
+          ></Route>
+          <Route
+            path="/Trailer/:ytUrl"
+            element={<Trailer />}
           ></Route>
         </Route>
       </Routes>
