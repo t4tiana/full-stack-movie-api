@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ReactPlayer from "react-player/lazy";
+import ReactPlayer from "react-player/youtube";
 import "./Trailer.css";
 
 import React from "react";
@@ -20,7 +20,7 @@ const Trailer = () => {
           controls={true}
           playing={true}
           muted = {true}
-          url={"`https://www.youtube.com/watch?v=${trailerUrl}`"}
+          url={'`https://www.youtube.com/watch?v=${trailerUrl}`'}
           width="100%"
           height="100%"
           onError={handleError}
