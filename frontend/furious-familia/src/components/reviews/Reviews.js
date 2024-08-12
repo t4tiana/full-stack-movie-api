@@ -14,6 +14,26 @@ const Reviews = (getMovieData, movie, reviews, setReviews) => {
     getMovieData(movieId);
   }, []);
 
+  const addReview = async (e) => {
+    e.preventDefault();
+
+    const review = reviewText.current;
+
+    try {
+      const response = await api.post("api/v1/reviews", {
+        reviewBody: review.value,
+        imdbId: movieId,
+      });
+      //Update the state of the reviews array on the client side optimistically
+      const updatedReviews = [...reviews, { body: review.value }];
+      //Clear the text area once user has successfully submitted review
+      review.value = "";
+      setReviews(updatedReviews);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Container>
       <Row>
@@ -52,6 +72,11 @@ const Reviews = (getMovieData, movie, reviews, setReviews) => {
               <>
                 <Row>
                   <Col>{r.body}</Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <hr />
+                  </Col>
                 </Row>
               </>
             );

@@ -6,10 +6,13 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Header from "./components/header/Header";
 import Trailer from "./components/trailer/Trailer";
+import Reviews from "./components/reviews/Reviews";
 
 function App() {
   /*Re-render app when state of movies changes */
   const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState();
+  const [reviews, setReviews] = useState([]);
 
   /* Sends a Get request to db to fetch all movies
   the response data is inserted as a parameter to setMovies, which updates the
@@ -24,6 +27,16 @@ function App() {
     }
   };
 
+  const getMovieData = async (movieId) => {
+    try {
+      const response = await api.get(`/api/v1/movies/${movieId}`);
+      const movie = response.data;
+      setMovie(movie);
+      setReviews(singleMovie.setReviews);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   /*Run getMovies function as soon as App loads */
   useEffect(() => {
     getMovies();
@@ -46,6 +59,17 @@ function App() {
             element={<Trailer />}
           ></Route>
         </Route>
+        <Route
+          path="/Reviews/:movieId"
+          element={
+            <Reviews
+              getMovieData={getMovieData}
+              movie={movie}
+              reviews={reviews}
+              setReviews={setReviews}
+            />
+          }
+        ></Route>
       </Routes>
     </div>
   );
