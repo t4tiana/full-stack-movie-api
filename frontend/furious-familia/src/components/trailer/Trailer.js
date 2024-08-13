@@ -6,7 +6,7 @@ import React from "react";
 
 const Trailer = () => {
   let params = useParams();
-  const trailerUrl = params.ytUrl;
+  const trailerUrl = "https://www.youtube.com/watch?v=" + params.ytUrl;
 
   /* Error message for user in case video doesn't load */
   const handleError = (error) => {
@@ -19,8 +19,8 @@ const Trailer = () => {
         <ReactPlayer
           controls={true}
           playing={true}
-          muted = {true}
-          url={'`https://www.youtube.com/watch?v=${trailerUrl}`'}
+          muted={true}
+          url={trailerUrl}
           width="100%"
           height="100%"
           onError={handleError}
