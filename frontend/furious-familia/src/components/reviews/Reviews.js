@@ -1,11 +1,10 @@
-import { useEffect, useRef } from "react";
+import { React, useEffect, useRef } from "react";
 import api from "../../api/axiosConfig";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../reviewForm/ReviewForm";
-import React from "react";
 
-const Reviews = (getMovieData, movie, reviews, setReviews) => {
+const Reviews = ({getMovieData, movie, reviews, setReviews}) => {
   const reviewText = useRef();
   let params = useParams();
   const movieId = params.movieId;
@@ -25,12 +24,12 @@ const Reviews = (getMovieData, movie, reviews, setReviews) => {
         imdbId: movieId,
       });
       //Update the state of the reviews array on the client side optimistically
-      const updatedReviews = [...reviews, { body: review.value }];
+      const updatedReviews = [{...reviews}, { body: review.value }];
       //Clear the text area once user has successfully submitted review
       review.value = "";
       setReviews(updatedReviews);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -70,7 +69,7 @@ const Reviews = (getMovieData, movie, reviews, setReviews) => {
           {reviews?.map((r) => {
             return (
               <>
-                <Row>
+                <Row key={r}>
                   <Col>{r.body}</Col>
                 </Row>
                 <Row>

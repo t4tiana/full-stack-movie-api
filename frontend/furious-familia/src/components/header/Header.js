@@ -29,6 +29,7 @@ const Header = () => {
           >
             <NavLink
               className="nav-link"
+              href="/"
               to="/"
             >
               Home

@@ -1,13 +1,14 @@
 import React from "react";
-import Form from "react-bootstrap/Form";
+import { Form, Button } from "react-bootstrap";
 
-const ReviewForm = () => {
+const ReviewForm = ({ handleSubmit, reviewText, labelText, defaultValue }) => {
   return (
     <Form>
       <Form.Group
         className="mb-3"
-        controlId="exampleForm.ControlTextarea"
+        controlId="exampleForm.ControlTextarea1"
       >
+        <Form.Label>{labelText}</Form.Label>
         <Form.Control
           ref={reviewText}
           as="textarea"

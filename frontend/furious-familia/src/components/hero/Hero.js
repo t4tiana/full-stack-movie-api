@@ -9,14 +9,17 @@ import Button from "react-bootstrap/Button";
 const Hero = ({ movies }) => {
   const navigate = useNavigate();
   function reviews(movieId) {
-    navigate(`/Reviews/${movieId}`);
+    navigate(`/reviews/${movieId}`);
   }
   return (
     <div id="movie-carousel-container">
       <Carousel>
         {movies?.map((movie) => {
           return (
-            <Paper elevation={16}>
+            <Paper
+              key={movie.id}
+              elevation={16}
+            >
               <div className="movie-card-container">
                 <div
                   className="movie-card"
