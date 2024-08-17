@@ -24,7 +24,7 @@ const Reviews = ({getMovieData, movie, reviews, setReviews}) => {
         imdbId: movieId,
       });
       //Update the state of the reviews array on the client side optimistically
-      const updatedReviews = [{...reviews}, { body: review.value }];
+      const updatedReviews = [{ body: review.value }, ...reviews];
       //Clear the text area once user has successfully submitted review
       review.value = "";
       setReviews(updatedReviews);
