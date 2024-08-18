@@ -7,6 +7,8 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document(collection = "reviews")
 @Data
 @AllArgsConstructor
@@ -17,9 +19,10 @@ public class Review {
 
     private String body;
 
-    // Constructor for when new review is written
-    // Cannot pass id because id is auto-generated
+    private Date createdAt;
+
     public Review(String body) {
         this.body = body;
+        this.createdAt = new Date();
     }
 }

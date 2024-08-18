@@ -1,10 +1,11 @@
+import "./Reviews.css";
 import { React, useEffect, useRef } from "react";
 import api from "../../api/axiosConfig";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import ReviewForm from "../reviewForm/ReviewForm";
 
-const Reviews = ({getMovieData, movie, reviews, setReviews}) => {
+const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
   const reviewText = useRef();
   let params = useParams();
   const movieId = params.movieId;
@@ -36,7 +37,7 @@ const Reviews = ({getMovieData, movie, reviews, setReviews}) => {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col className="review-header">
           <h3>Reviews</h3>
         </Col>
       </Row>

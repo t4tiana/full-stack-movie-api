@@ -21,6 +21,7 @@ public class ReviewService {
                 .matching(Criteria.where("imdbId").is(imdbId))
                 // Apply changes to Movie collection
                 // reviewId is created then pushed into reviewIds array for movie
+                //TODO: reverse order so that newest review is listed first
                 .apply(new Update().push("reviewIds").value(review))
                 // Only update a single movie
                 .first();
