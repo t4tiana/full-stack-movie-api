@@ -32,7 +32,8 @@ function App() {
       const response = await api.get(`/api/v1/movies/${movieId}`);
       const thisMovie = response.data;
       setThisMovie(thisMovie);
-      setReviews(thisMovie.reviewIds);
+      const sortedReviews = thisMovie.reviewIds.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      setReviews(sortedReviews);
     } catch (err) {
       console.log(err);
     }
